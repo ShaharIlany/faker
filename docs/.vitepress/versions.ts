@@ -20,6 +20,7 @@ function readOtherLatestReleaseTagNames(): string[] {
       const majorVersion = semver.major(tag);
       return majorVersion >= 6 && majorVersion !== currentMajorVersion;
     })
+    // eslint-disable-next-line unicorn/no-array-reduce
     .reduce<Record<number, string>>((latestTagByMajor, tag) => {
       const majorVersion = semver.major(tag);
 
@@ -50,12 +51,15 @@ export const versionBannerInfix: string | null = (() => {
   if (deployContext === 'production') {
     return null;
   }
+
   if (isReleaseBranch) {
     return '"an old version"';
   }
+
   if (branchName === 'next') {
     return '"the next (unreleased) version"';
   }
+
   return '"a development version"';
 })();
 

@@ -114,7 +114,7 @@ describe('functional tests', () => {
     }
 
     describe.each(Object.entries(modules))('%s', (module, methods) => {
-      // eslint-disable-next-line vitest/prefer-each -- need to dynamically succeed/fail
+      //# eslint-disable-next-line vitest/prefer-each -- need to dynamically succeed/fail
       for (const meth of methods) {
         const testAssertion = () => {
           // TODO @ST-DDT 2022-03-28: Use random seed once there are no more failures
@@ -150,7 +150,7 @@ describe('faker.helpers.fake functional tests', () => {
     }
 
     describe.each(Object.entries(modules))('%s', (module, methods) => {
-      // eslint-disable-next-line vitest/prefer-each -- need to dynamically succeed/fail
+      //# eslint-disable-next-line vitest/prefer-each -- need to dynamically succeed/fail
       for (const meth of methods) {
         const testAssertion = () => {
           // TODO @ST-DDT 2022-03-28: Use random seed once there are no more failures
